@@ -83,26 +83,11 @@ export default function ContactPage() {
                 Send a message
               </h2>
               <p className="mt-2 text-sm leading-6 text-[color:var(--muted-foreground)]">
-                This form is ready for Netlify Forms. On Vercel, it will still
-                validate inputs but won’t deliver without wiring an email
-                provider.
+                Use this form to send us a brief. We’ll reply by email with next
+                steps and suggested timelines.
               </p>
 
-              <form
-                name="contact"
-                method="POST"
-                action="/contact/success"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                className="mt-8 space-y-4"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-                <p className="hidden">
-                  <label>
-                    Don’t fill this out: <input name="bot-field" />
-                  </label>
-                </p>
-
+              <form className="mt-8 space-y-4">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Name</label>
