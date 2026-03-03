@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+
+# Netlify will detect Next.js automatically; this just makes intent explicit.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
