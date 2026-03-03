@@ -88,10 +88,19 @@ export default function ContactPage() {
               </p>
 
               <form
-                className="mt-8 space-y-4"
+                name="contact"
                 method="POST"
-                action="/api/contact"
+                action="/contact/success"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                className="mt-8 space-y-4"
               >
+                <input type="hidden" name="form-name" value="contact" />
+                <p className="hidden">
+                  <label>
+                    Don’t fill this out: <input name="bot-field" />
+                  </label>
+                </p>
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Name</label>
