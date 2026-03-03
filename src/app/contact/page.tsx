@@ -87,7 +87,11 @@ export default function ContactPage() {
                 steps and suggested timelines.
               </p>
 
-              <form className="mt-8 space-y-4">
+              <form
+                className="mt-8 space-y-4"
+                method="POST"
+                action="/api/contact"
+              >
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Name</label>
