@@ -23,9 +23,9 @@ export function ContactForm() {
     });
 
     try {
-      // Submitting to standard `/` using urlencoded data bypasses Next.js form handling
-      // and lets the Netlify forms edge handler pick it up directly.
-      const response = await fetch("/", {
+      // Submitting to the static `/__forms.html` bypasses Next.js App Router 404s
+      // and lets the Netlify forms edge handler explicitly pick it up.
+      const response = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: data.toString(),
