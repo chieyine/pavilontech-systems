@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import { Container } from "@/components/container";
-import { Button } from "@/components/button";
 import { Reveal, RevealItem, RevealStagger } from "@/components/reveal";
+import { ContactForm } from "@/components/contact-form";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -87,68 +87,7 @@ export default function ContactPage() {
                 steps and suggested timelines.
               </p>
 
-              <form
-                name="contact"
-                method="POST"
-                action="/contact/success"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
-                className="mt-8 space-y-4"
-              >
-                <input type="hidden" name="form-name" value="contact" />
-                <p className="hidden">
-                  <label>
-                    Don’t fill this out: <input name="bot-field" />
-                  </label>
-                </p>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Name</label>
-                    <input
-                      name="name"
-                      required
-                      className="h-11 w-full rounded-2xl border border-[color:var(--border)] bg-[color:var(--background)] px-4 text-sm outline-none focus:border-[color:var(--brand)]"
-                      placeholder="Your name"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      className="h-11 w-full rounded-2xl border border-[color:var(--border)] bg-[color:var(--background)] px-4 text-sm outline-none focus:border-[color:var(--brand)]"
-                      placeholder="you@company.org"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Subject</label>
-                  <input
-                    name="subject"
-                    className="h-11 w-full rounded-2xl border border-[color:var(--border)] bg-[color:var(--background)] px-4 text-sm outline-none focus:border-[color:var(--brand)]"
-                    placeholder="What should we focus on?"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Message</label>
-                  <textarea
-                    name="message"
-                    required
-                    rows={6}
-                    className="w-full resize-none rounded-2xl border border-[color:var(--border)] bg-[color:var(--background)] px-4 py-3 text-sm leading-6 outline-none focus:border-[color:var(--brand)]"
-                    placeholder="Tell us about your program, context, timeline, and deliverables."
-                  />
-                </div>
-
-                <div className="pt-2">
-                  <Button type="submit" size="lg" className="w-full">
-                    Send message
-                  </Button>
-                </div>
-              </form>
+              <ContactForm />
             </Reveal>
           </div>
         </Container>
